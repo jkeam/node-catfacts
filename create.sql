@@ -1,4 +1,10 @@
-DROP table IF EXISTS facts;
+drop database if exists catfacts;
+create database catfacts;
+drop user if exists catuser;
+create user catuser with encrypted password 'catuserpassword';
+grant all privileges on database catfacts to catuser;
+\c catfacts;
+drop table if exists facts;
 CREATE TABLE facts(id SERIAL, fact TEXT NOT NULL);
 insert into facts(fact) values ('The penalty for killing a cat, 4,000 years ago in Egypt, was death.');
 insert into facts(fact) values ('95% of all cat owners admit they talk to their cats.');

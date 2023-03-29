@@ -8,5 +8,5 @@ podman run -d --rm --name db \
   registry.redhat.io/rhel9/postgresql-13:latest
 
 sleep 5
-podman cp ./import.sql db:/opt/app-root/src/import.sql
-podman exec db psql -U catuser -d catfacts -a -f /opt/app-root/src/import.sql
+podman cp ./create.sql db:/opt/app-root/src/create.sql
+podman exec db psql -U catuser -d catfacts -a -f /opt/app-root/src/create.sql
