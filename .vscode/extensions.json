@@ -2,7 +2,6 @@
     "recommendations": [
       "ms-vscode.js-debug",
       "redhat.fabric8-analytics",
-      "DavidAnson.vscode-markdownlint",
-      "dracula-theme.theme-dracula"
+      "DavidAnson.vscode-markdownlint"
     ]
 }
