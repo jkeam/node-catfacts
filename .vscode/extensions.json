@@ -1,6 +1,7 @@
 {
     "recommendations": [
       "ms-vscode.js-debug",
-      "redhat.fabric8-analytics"
+      "redhat.fabric8-analytics",
+      "DavidAnson.vscode-markdownlint"
     ]
 }
