@@ -28,7 +28,7 @@ components:
         - name: "DB_URL"
           value: "postgres://catuser:catuserpassword@localhost:5432/catfacts"
         - name: "PORT"
-          value: 3000
+          value: "3000"
   - name: adminer
     container:
       image: quay.io/official-images/adminer@sha256:44397ff6d1367c0bd1293206ad08f21d4146cca9e38698ea7c2fe0bedda9f25a
