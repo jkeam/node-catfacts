@@ -18,7 +18,7 @@ components:
           targetPort: 3000
       image: 'registry.redhat.io/devspaces/udi-rhel8@sha256:99ff1b5c541855e4cf368816c4bcdcdc86d32304023f72c4443213a4032ef05b'
       memoryLimit: 1G
-      cpuLimit: 4000m
+      cpuLimit: 1000m
       mountSources: true
       sourceMapping: /projects
       volumeMounts:
