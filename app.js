@@ -8,6 +8,11 @@ const DB_URL = process.env.DB_URL || 'postgres://catuser:catuserpassword@localho
 const pgp = require('pg-promise')(/* options */)
 const db = pgp(DB_URL);
 
+/**
+ * Find by id.
+ * @param {string} id Id of the desired fact
+ * @returns Text of the fact
+ */
 const findById = async (id) => {
   try {
     return await db.one('SELECT * from facts where id = $1', parseInt(id, 10));
