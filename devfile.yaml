@@ -3,11 +3,11 @@ metadata:
   generateName: node-catfacts-
 projects:
   - name: node-catfacts
-  git:
-    remotes:
-      origin: "https://github.com/jkeam/node-catfacts.git"
-    checkoutFrom:
-      revision: main
+    git:
+      remotes:
+        origin: "https://github.com/jkeam/node-catfacts.git"
+      checkoutFrom:
+        revision: main
 components:
   - name: tools
     container:
@@ -44,7 +44,7 @@ components:
           exposure: public
           protocol: http
           secure: false
-  - name: mssql
+  - name: db
     container:
       image: registry.redhat.io/rhel9/postgresql-13:latest
       memoryLimit: 4Gi
@@ -70,7 +70,7 @@ components:
           secure: false
       volumeMounts:
         - name: dbdata
-          path: /var/opt/mssql
+          path: /var/lib/pgsql/data
   - name: dbdata
     volume:
       size: 1Gi
