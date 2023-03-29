@@ -24,11 +24,6 @@ components:
       volumeMounts:
         - name: npm
           path: /home/user/.npm
-      env:
-        - name: "DB_URL"
-          value: "postgres://catuser:catuserpassword@localhost:5432/catfacts"
-        - name: "PORT"
-          value: "3000"
   - name: npm
     volume:
       size: 1G
