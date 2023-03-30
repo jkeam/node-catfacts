@@ -18,9 +18,19 @@ objects:
         containers:
         - name: migration
           image: quay.io/jkeam/node-catfacts:latest
+          command: ["npm"]
+          args: ["run", "migrate"]
           env:
             - name: DB_URL
               value: ${DB_URL}
+          securityContext:
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop:
+              - ALL
         restartPolicy: Never
     backoffLimit: 4
 parameters:
