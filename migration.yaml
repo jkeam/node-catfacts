@@ -1,0 +1,30 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: node-catfacts-db-migration
+  annotations:
+    description: "DB migration"
+    tags: "database,postgresql,migration"
+  labels:
+    app: node-catfacts-db-migration
+objects:
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    name: node-catfacts-db-migration
+  spec:
+    template:
+      spec:
+        containers:
+        - name: migration
+          image: quay.io/jkeam/node-catfacts:latest
+          env:
+            - name: DB_URL
+              value: ${DB_URL}
+        restartPolicy: Never
+    backoffLimit: 4
+parameters:
+- name: DB_URL
+  display: DB URL
+  description: Database URL to connect to
+  required: true
