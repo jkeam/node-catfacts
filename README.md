@@ -12,3 +12,9 @@
 ## Testing
 
 1. `npm test`
+
+## Build Container
+
+```shell
+podman build -t quay.io/<your username>/node-catfacts -f ./Dockerfile
+```
