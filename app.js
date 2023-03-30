@@ -9,7 +9,7 @@ const pgp = require('pg-promise')(/* options */)
 const db = pgp(DB_URL);
 
 /**
- * Find by id.
+ * Find by catfacts id.
  * @param {string} id Id of the desired fact
  * @returns Text of the fact
  */
