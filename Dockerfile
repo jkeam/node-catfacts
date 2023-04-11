@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi9/nodejs-16@sha256:dbd1762115eb81fe8818bd0209
 
 USER root
 
-RUN yum install postgresql-devel redhat-rpm-config python-devel -y
+RUN yum install postgresql-devel redhat-rpm-config -y
 
 ENV PORT 3000
 ENV DB_URL postgres://catuser:catuserpassword@localhost:5432/catfacts
