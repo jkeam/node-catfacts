@@ -5,32 +5,40 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const DB_URL = process.env.DB_URL || 'postgres://catuser:catuserpassword@localhost:5432/catfacts';
 
-const pgp = require('pg-promise')(/* options */)
-const db = pgp(DB_URL);
+const pgp = require('pg-native');
+const db = new pgp();
+db.connectSync(DB_URL);
 
 /**
  * Find by catfacts id.
  * @param {string} id Id of the desired fact
  * @returns Text of the fact
  */
-const findById = async (id) => {
+const findById = (id) => {
   try {
-    return await db.one('SELECT * from facts where id = $1', parseInt(id, 10));
+    const parsedId = parseInt(id, 10);
+    if (parsedId) {
+      const results = db.querySync('SELECT * from facts where id = $1', [parsedId]);
+      if (results && results.length > 0) {
+        return results[0];
+      }
+    }
+    return null;
   } catch(e) {
     console.error(e);
   }
 };
 
 app.get('/', (req, res) => {
-  res.send('Welcome to catfacts!');
+  return res.send('Welcome to catfacts!');
 });
 
 app.get('/:id', async (req, res) => {
-  const data = await findById(req.params.id);
-  if (!data) {
+  const fact = await findById(req.params.id);
+  if (!fact) {
     return res.send('Unable to find that catfact');
   }
-  res.send(data.fact);
+  return res.send(fact.fact);
 });
 
 app.listen(PORT, (error) => {
