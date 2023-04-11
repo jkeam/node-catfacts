@@ -16,7 +16,7 @@ components:
           name: nodejs
           protocol: http
           targetPort: 3000
-      image: 'registry.redhat.io/devspaces/udi-rhel8@sha256:99ff1b5c541855e4cf368816c4bcdcdc86d32304023f72c4443213a4032ef05b'
+      image: 'quay.io/jkeam/udi-rhel8-postgres@sha256:c307cc92c9b006af8dd364286b6a0ed1cd0820c73ac586ac11aebf5c4f3d3af3'
       memoryLimit: 1G
       cpuLimit: 1000m
       mountSources: true
