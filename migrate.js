@@ -2,8 +2,9 @@ require('dotenv').config();
 const fs = require('fs/promises');
 
 const DB_URL = process.env.DB_URL || 'postgres://catuser:catuserpassword@localhost:5432/catfacts';
-const pgp = require('pg-promise')(/* options */)
-const db = pgp(DB_URL);
+const pgp = require('pg-native');
+const db = new pgp();
+db.connectSync(DB_URL);
 
 (async () => {
   try {
@@ -14,7 +15,7 @@ const db = pgp(DB_URL);
         continue;
       }
 
-      await db.none(command);
+      db.querySync(command);
       if (command.includes('insert into facts')) {
         count++;
       }
