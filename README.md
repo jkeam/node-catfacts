@@ -6,9 +6,17 @@
 
 ## Running
 
+### Locally
+
 1. Start DB
 2. Import data from `import.sql`
 3. Start app with `npm start`
+
+### Dev Spaces
+
+1. Open up a terminal in your dev space (Hamburger in the upper right -> Terminal -> New Terminal)
+2. Run `./install.sh` to setup db and migrate data
+3. Run `./run.sh` to start app
 
 ## Testing
 
