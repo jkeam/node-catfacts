@@ -1,6 +1,6 @@
 FROM registry.redhat.io/devspaces/udi-rhel8:3.10-27
 
-RUN dnf install postgresql-devel redhat-rpm-config python-devel -y
+RUN dnf install postgresql-devel redhat-rpm-config python3.11-devel -y
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD tail -f /dev/null
