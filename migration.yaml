@@ -19,7 +19,7 @@ objects:
         - name: migration
           image: quay.io/jkeam/node-catfacts:latest
           command: ["npm"]
-          args: ["run", "migrate"]
+          args: ["run", "migrate-standalone"]
           env:
             - name: DB_URL
               value: ${DB_URL}

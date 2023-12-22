@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./app.js",
     "test": "jest",
-    "migrate": "node ./migrate.js"
+    "migrate": "node ./migrate.js",
+    "migrate-standalone": "npm install && node ./migrate.js"
   },
   "repository": {
     "type": "git",
