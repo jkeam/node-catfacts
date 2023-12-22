@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/nodejs-16@sha256:dbd1762115eb81fe8818bd0209f12f77b106d2b51ca230666dbd1534d84aa895
+FROM registry.access.redhat.com/ubi9/nodejs-16:1-143
 
 USER root
 
