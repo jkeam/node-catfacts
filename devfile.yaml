@@ -16,7 +16,7 @@ components:
           name: nodejs
           protocol: http
           targetPort: 3000
-      image: 'quay.io/jkeam/udi-rhel8-postgres@sha256:c307cc92c9b006af8dd364286b6a0ed1cd0820c73ac586ac11aebf5c4f3d3af3'
+      image: 'quay.io/jkeam/udi-rhel8-postgres@sha256:d3c0ba70df8238bd116aa353d2d05d0f9d9967d9af3645acaab5871d20be6f6d'
       memoryLimit: 1G
       cpuLimit: 1000m
       mountSources: true
